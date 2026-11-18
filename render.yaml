@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: taskflow-react
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: TASKFLOW_API_ORIGIN
+        value: https://task-flow-six-rouge.vercel.app
